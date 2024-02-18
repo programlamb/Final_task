@@ -1,0 +1,25 @@
+#panel {
+    background-color: rgb(31, 42, 255);
+    height: 150px;
+}
+
+h1 {
+    color: white;
+    padding: 10px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    display: block;
+    width: 300px;
+    height: 40px;
+}
+
+div{
+    display: flex;
+    justify-content: center;
+}

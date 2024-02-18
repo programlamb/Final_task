@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <nav id="panel">
+        <a id="home-link" href="/"><h1>distributed calculator</h1></a>
+        <a id="home-link" href="/settings"><h1>settings</h1></a>
+    </nav>
+    
+    <div>
+        <form action="/calc" method="GET">
+            <input value="" size="100" placeholder="Enter the expression to calculate" name="exp">
+        </form>
+    </div>
+    <main>
+        
+        <div>
+        <ul>
+            {{ range . }}
+            <li>
+                <div>
+                    <h2>{{ .Exp }}={{ .Result }} {{ .Status }}</h2>
+                </div>
+            </li>
+            {{ end }}
+        </ul>
+        </div>
+    </main>
+</body>

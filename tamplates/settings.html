@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <nav id="panel">
+        <a id="home-link" href="/"><h1>distributed calculator</h1></a>
+        <a id="home-link" href="/settings"><h1>settings</h1></a>
+    </nav>
+    <main>
+        <form action="/setSettings" method="GET">
+            <h2>Enter the operatoin execution time +</h2>
+            <input value="" size="100" placeholder="1" name="+">
+            <h2>Enter the operatoin execution time -</h2>
+            <input value="" size="100" placeholder="1" name="-">
+            <h2>Enter the operatoin execution time *</h2>
+            <input value="" size="100" placeholder="1" name="*">
+            <h2>Enter the operatoin execution time /</h2>
+            <input value="" size="100" placeholder="1" name="/">
+            <button type="submit">сохранить</button>
+        </form>
+    </main>
+</body>
