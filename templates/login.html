@@ -1,0 +1,17 @@
+{{ define "login" }}
+
+{{ template "base" }}
+
+    <main>
+        <h1>Авторизация</h1>
+        <form action="/loginAsUser" method="GET">
+            <input type="text" name="email" placeholder="Введите почту"><br>
+            <input type="text" name="password" placeholder="Введите пароль"><br>
+            <button>Авторизироваться</button>
+            <br>
+            Войдите или зарегистрируйтесь, чтобы начать работу.
+        </form>
+    </main>
+</body>
+
+{{ end }}

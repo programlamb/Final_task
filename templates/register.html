@@ -1,0 +1,19 @@
+{{ define "register" }}
+
+{{ template "base" }}
+
+    <main>
+        <h1>Регистрация</h1>
+        <form action="/save_user" method="GET">
+            <input type="text" name="email" placeholder="Введите почту"><br>
+            <input type="text" name="userName" placeholder="Введите имя пользователя"><br>
+            <input type="text" name="password" placeholder="Введите пароль"><br>
+            <input type="text" name="password2" placeholder="Повторите пароль"><br>
+            <button>Зарегистрироваться</button>
+            <br>
+            Войдите или зарегистрируйтесь, чтобы начать работу.
+        </form>
+    </main>
+</body>
+
+{{ end }}

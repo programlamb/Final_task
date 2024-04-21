@@ -1,11 +1,12 @@
 #panel {
-    background-color: rgb(31, 42, 255);
-    height: 150px;
+    background-color: rgb(255, 0, 0);
+    display: block;
 }
 
-h1 {
-    color: white;
-    padding: 10px;
+a {
+    color: rgb(255, 0, 0);
+    padding: 5px;
+    display: block;
 }
 
 main {
@@ -19,7 +20,6 @@ input {
     height: 40px;
 }
 
-div{
-    display: flex;
-    justify-content: center;
+div {
+    display: block;
 }

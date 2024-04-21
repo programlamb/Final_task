@@ -1,3 +1,5 @@
-module GoLyceum
+module Final_task
 
-go 1.21.0
+go 1.21.5
+
+require github.com/mattn/go-sqlite3 v1.14.22

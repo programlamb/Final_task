@@ -1,0 +1,20 @@
+{{ define "sattings" }}
+
+{{ template "base" }}
+
+    <main>
+        <form action="/setSettings" method="GET">
+            <h2>Enter the operatoin execution time +</h2>
+            <input value="" size="100" placeholder="1" name="+">
+            <h2>Enter the operatoin execution time -</h2>
+            <input value="" size="100" placeholder="1" name="-">
+            <h2>Enter the operatoin execution time *</h2>
+            <input value="" size="100" placeholder="1" name="*">
+            <h2>Enter the operatoin execution time /</h2>
+            <input value="" size="100" placeholder="1" name="/">
+            <button type="submit">сохранить</button>
+        </form>
+    </main>
+</body>
+
+{{ end }}
