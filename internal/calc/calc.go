@@ -18,6 +18,7 @@ var settings = map[string]int{"+": 1, "-": 1, "*": 1, "/": 1}
 
 // Handler главной страницы
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
+	// Если пользователь не авторизован, отправляем его на страницу регистрации
 	if authorization.GetActiveUserID() == 0 {
 		http.Redirect(w, r, "/register", http.StatusSeeOther)
 		return
@@ -46,14 +47,16 @@ func CalcHandler(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
+	// Сохраняем варажение в база данных с привязкой к пользователю
 	exp := db.Expression{Exp: expression, CalcTime: calcTime, CreateTime: createTime}
 	db.AddExpression(authorization.GetActiveUserID(), exp)
 	// переводим пользователя обратно на главную страницу
-	http.Redirect(w, r, "http://localhost:8080/", http.StatusPermanentRedirect)
+	http.Redirect(w, r, "/", http.StatusPermanentRedirect)
 }
 
 // Handler страницы настроек
 func SettingsHandler(w http.ResponseWriter, r *http.Request) {
+	// Если пользователь не авторизован, отправляем его на страницу регистрации
 	if authorization.GetActiveUserID() == 0 {
 		http.Redirect(w, r, "/register", http.StatusSeeOther)
 		return
@@ -86,7 +89,7 @@ func SettingsSaver(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// переводим пользователя обратно на главную с настройками
-	http.Redirect(w, r, "http://localhost:8080/settings", http.StatusPermanentRedirect)
+	http.Redirect(w, r, "/settings", http.StatusPermanentRedirect)
 }
 
 // функция, которая обновляет статус и решает выражения
@@ -103,7 +106,7 @@ func updateStatus(e []db.Expression) []db.Expression {
 			tv, err := types.Eval(fs, nil, token.NoPos, e[i].Exp)
 			if err != nil {
 				e[i].Result = ""
-				e[i].Status = "expression parsing error"
+				e[i].Status = "expression parsing error: " + err.Error()
 			} else {
 				// считаем пример и записываем его значение
 				e[i].Result = tv.Value.String()
